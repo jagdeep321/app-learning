@@ -13,7 +13,8 @@ export function MyTabs() {
             // headerStyle:{
             //     backgroundColor:"#000"
             // },
-            headerTitleAlign: "center"
+            headerTitleAlign: "center",
+            
         })} >
             <Tab.Screen name="Home" component={HomeScreen} options={{
                 headerRight: () => (
