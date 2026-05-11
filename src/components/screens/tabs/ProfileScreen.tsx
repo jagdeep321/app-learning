@@ -5,7 +5,7 @@ import { Button } from '@react-navigation/elements';
 import Jaggu from './Jaggu';
 
 export function ProfileScreen({route,navigations}:any) {
-    console.log("data comminmg from Home page : ",route.params.data);
+    console.log("data comminmg from Home page : ",route.params);
 
     const data = route.params.data
     

@@ -10,7 +10,7 @@ const Tab = createBottomTabNavigator();
 
 export function MyTabs() {
     return (
-        <Tab.Navigator screenOptions={({ navigation, route }) => ({
+        <Tab.Navigator  screenOptions={({ navigation, route }) => ({
             //  headerShown:false
             // headerStyle:{
             //     backgroundColor:"#000"
@@ -19,23 +19,20 @@ export function MyTabs() {
 
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName = '';
-                let label = ''
+           
 
                 if (route.name === 'Home') {
-                    iconName = focused
-                        ? 'home'
-                        : 'home-outline';
-                    label = 'homehu'
+                    iconName =  'home';
                 } else if (route.name === 'Profile') {
                     iconName = focused ? 'user' : 'user-o';
-                    label = 'prof'
+                   
                 }
 
                 // You can return any component that you like here!
                 return <Icon name={iconName} size={size} color={color} />;
             },
             tabBarActiveTintColor: 'tomato',
-            tabBarInactiveTintColor: 'gray',
+            tabBarInactiveTintColor: 'green',
 
         })} >
             <Tab.Screen name="Home" component={HomeScreen} options={{
@@ -50,7 +47,7 @@ export function MyTabs() {
                     }}>logo</Button>
                 ),
             }} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen name="Profile" component={ProfileScreen} initialParams={{data:{name: "sandeep", age: 19 }}} />
         </Tab.Navigator>
     );
 }
