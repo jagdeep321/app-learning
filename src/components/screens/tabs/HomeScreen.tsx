@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Button } from '@react-navigation/elements';
+import UseRefHook from '../../UseRefHook';
 
 const { width } = Dimensions.get('window');
 
@@ -71,13 +72,15 @@ export function HomeScreen() {
                 />
             </View>
 
-            <FlatList
+            <UseRefHook/>
+
+            {/* <FlatList
                 data={products}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={renderProductItem}
                 numColumns={2} // Premium Grid Layout
                 contentContainerStyle={styles.listContent}
-            />
+            /> */}
         </View>
     );
 }
